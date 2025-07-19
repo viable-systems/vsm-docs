@@ -131,7 +131,7 @@ on:
 
 jobs:
   test:
-    name: Test (Elixir ${{ matrix.elixir }} / OTP ${{ matrix.otp }})
+    name: Test (Elixir {% raw %}${{ matrix.elixir }}{% endraw %} / OTP {% raw %}${{ matrix.otp }}{% endraw %})
     runs-on: ubuntu-latest
     
     strategy:
@@ -144,15 +144,15 @@ jobs:
       
       - uses: erlef/setup-beam@v1
         with:
-          elixir-version: ${{ matrix.elixir }}
-          otp-version: ${{ matrix.otp }}
+          elixir-version: {% raw %}${{ matrix.elixir }}{% endraw %}
+          otp-version: {% raw %}${{ matrix.otp }}{% endraw %}
       
       - name: Restore dependencies cache
         uses: actions/cache@v3
         with:
           path: deps
-          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-          restore-keys: ${{ runner.os }}-mix-
+          key: {% raw %}${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}{% endraw %}
+          restore-keys: {% raw %}${{ runner.os }}-mix-{% endraw %}
       
       - name: Install dependencies
         run: mix deps.get
@@ -185,7 +185,7 @@ jobs:
       
       - name: Publish
         run: |
-          mix hex.config api_key ${{ secrets.HEX_API_KEY }}
+          mix hex.config api_key {% raw %}${{ secrets.HEX_API_KEY }}{% endraw %}
           mix hex.publish --yes
 ```
 

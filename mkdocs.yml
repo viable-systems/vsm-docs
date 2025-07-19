@@ -9,9 +9,6 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  # custom_dir: overrides  # Uncomment when overrides are needed
-  # logo: assets/logo.png  # Uncomment when logo is added
-  # favicon: assets/favicon.png  # Uncomment when favicon is added
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -49,17 +46,9 @@ theme:
     - content.tabs.link
 
 plugins:
-  - search:
-      separator: '[\s\-\.]+'
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: iso_datetime
+  - search
   - minify:
       minify_html: true
-  - awesome-pages
-  - macros
-  - mermaid2:
-      version: 10.6.0
 
 markdown_extensions:
   - abbr
@@ -87,10 +76,6 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: viable-systems
-      repo: vsm-docs
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
@@ -122,90 +107,11 @@ nav:
   - Overview:
     - overview/index.md
     - What is VSM: overview/what-is-vsm.md
-    - Why VSM: overview/why-vsm.md
-    - Key Concepts: overview/key-concepts.md
-    - Architecture: overview/architecture.md
   - Getting Started:
     - getting-started/index.md
-    - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quick-start.md
-    - First VSM System: getting-started/first-system.md
-    - Examples: getting-started/examples.md
   - Core Subsystems:
     - subsystems/index.md
-    - S1 - Operations:
-      - subsystems/s1-operations/index.md
-      - Concepts: subsystems/s1-operations/concepts.md
-      - Implementation: subsystems/s1-operations/implementation.md
-      - API Reference: subsystems/s1-operations/api.md
-    - S2 - Coordination:
-      - subsystems/s2-coordination/index.md
-      - Anti-Oscillation: subsystems/s2-coordination/anti-oscillation.md
-      - Implementation: subsystems/s2-coordination/implementation.md
-      - API Reference: subsystems/s2-coordination/api.md
-    - S3 - Control:
-      - subsystems/s3-control/index.md
-      - Resource Bargaining: subsystems/s3-control/resource-bargaining.md
-      - Implementation: subsystems/s3-control/implementation.md
-      - API Reference: subsystems/s3-control/api.md
-    - S4 - Intelligence:
-      - subsystems/s4-intelligence/index.md
-      - Pattern Recognition: subsystems/s4-intelligence/pattern-recognition.md
-      - Implementation: subsystems/s4-intelligence/implementation.md
-      - API Reference: subsystems/s4-intelligence/api.md
-    - S5 - Policy:
-      - subsystems/s5-policy/index.md
-      - Governance: subsystems/s5-policy/governance.md
-      - Implementation: subsystems/s5-policy/implementation.md
-      - API Reference: subsystems/s5-policy/api.md
-  - Support Systems:
-    - Algedonic Channel:
-      - subsystems/algedonic/index.md
-      - Concepts: subsystems/algedonic/concepts.md
-      - Implementation: subsystems/algedonic/implementation.md
-      - API Reference: subsystems/algedonic/api.md
-    - Temporal Variety:
-      - subsystems/temporal-variety/index.md
-      - Novel Contributions: subsystems/temporal-variety/novel-contributions.md
-      - Implementation: subsystems/temporal-variety/implementation.md
-      - API Reference: subsystems/temporal-variety/api.md
   - Migration Roadmap:
     - roadmap/index.md
     - Overview: roadmap/overview.md
-    - Phases:
-      - roadmap/phases/index.md
-      - Phase 1 - Foundation: roadmap/phases/phase-1.md
-      - Phase 2 - Core Infrastructure: roadmap/phases/phase-2.md
-      - Phase 3 - Basic VSM: roadmap/phases/phase-3.md
-      - Phase 4 - Extended VSM: roadmap/phases/phase-4.md
-      - Phase 5 - Integration: roadmap/phases/phase-5.md
-      - Phase 6 - Applications: roadmap/phases/phase-6.md
-      - Phase 7 - Enhancement: roadmap/phases/phase-7.md
-      - Phase 8 - Testing: roadmap/phases/phase-8.md
-      - Phase 9 - Documentation: roadmap/phases/phase-9.md
-      - Phase 10 - Deployment: roadmap/phases/phase-10.md
-    - Packages:
-      - roadmap/packages/index.md
-      - Core Infrastructure: roadmap/packages/core-infrastructure.md
-      - VSM Components: roadmap/packages/vsm-components.md
-      - Applications: roadmap/packages/applications.md
-      - Support Libraries: roadmap/packages/support-libraries.md
-  - Guides:
-    - guides/index.md
-    - Building VSM Systems: guides/building-systems.md
-    - Integrating with Phoenix: guides/phoenix-integration.md
-    - Scaling VSM: guides/scaling.md
-    - Monitoring & Observability: guides/monitoring.md
-    - Security Considerations: guides/security.md
-  - API Reference:
-    - api-reference/index.md
-    - Core APIs: api-reference/core.md
-    - Subsystem APIs: api-reference/subsystems.md
-    - Integration APIs: api-reference/integration.md
-    - Utilities: api-reference/utilities.md
-  - Reference:
-    - reference/index.md
-    - Glossary: reference/glossary.md
-    - Bibliography: reference/bibliography.md
-    - Contributing: reference/contributing.md
-    - License: reference/license.md
+    - Phase 1 - Foundation: roadmap/phases/phase-1.md

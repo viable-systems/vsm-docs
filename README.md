@@ -65,4 +65,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [VSM Core Repository](https://github.com/viable-systems/vsm-core)
 - [VSM Starter Template](https://github.com/viable-systems/vsm-starter)
-- [Official Website](https://viable-systems.github.io)
+- [Official Website](https://viable-systems.github.io)# Trigger deployment after enabling GitHub Pages

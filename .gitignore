@@ -1,0 +1,34 @@
+# MkDocs
+site/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation build artifacts
+docs/overrides/
+.sass-cache/
+
+# Temporary files
+*.tmp
+*.bak
+.~*

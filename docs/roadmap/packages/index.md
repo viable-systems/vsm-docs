@@ -27,15 +27,26 @@ High-performance cybernetic pattern detection:
 - GenStage integration for event streaming
 - Pre-built cybernetic failure patterns
 
+### [vsm-rate-limiter](https://github.com/viable-systems/vsm-rate-limiter)
+VSM-aware rate limiting with variety attenuation:
+- Implements Ashby's Law of Requisite Variety
+- Subsystem-specific rate limits (S1-S5)
+- Pluggable adapters (token bucket, ExRated, Hammer)
+- Algedonic signaling for threshold breaches
+- Dynamic variety attenuation based on system load
+
 ## Integration Architecture
 
 ```mermaid
 graph TD
     A[vsm-starter] -->|Telemetry Events| B[vsm-telemetry]
     A -->|Telemetry Events| C[vsm-goldrush]
+    A -->|Rate Limit Checks| F[vsm-rate-limiter]
     B -->|Metrics| C
     C -->|Pattern Matches| B
     C -->|Algedonic Signals| A
+    F -->|Telemetry Events| B
+    F -->|Algedonic Alerts| A
     B -->|Dashboard| D[Phoenix LiveView]
     B -->|Metrics| E[Prometheus]
 ```
@@ -73,6 +84,7 @@ graph TD
 | vsm-starter | Template | Foundation for building VSM apps | Provides patterns & structure |
 | vsm-telemetry | Service | Monitoring & visualization | Consumes telemetry events |
 | vsm-goldrush | Library | Real-time failure detection | Analyzes events for patterns |
+| vsm-rate-limiter | Library | Variety attenuation & rate limiting | Protects subsystems from overload |
 
 ## Getting Started
 
@@ -90,8 +102,9 @@ def deps do
     {:telemetry_metrics, "~> 1.0"},
     
     # Add VSM ecosystem packages
-    {:vsm_telemetry, "~> 0.1.0"},  # For monitoring
-    {:vsm_goldrush, "~> 0.1.0"}    # For pattern detection
+    {:vsm_telemetry, "~> 0.1.0"},     # For monitoring
+    {:vsm_goldrush, "~> 0.1.0"},      # For pattern detection
+    {:vsm_rate_limiter, "~> 0.1.0"}   # For variety attenuation
   ]
 end
 ```
